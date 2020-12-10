@@ -1,13 +1,20 @@
 <template>
-    <div id="app">{{ msg }}</div>
+    <div id="app">
+        <router-link to="/">
+            <button>首页</button>
+        </router-link>
+        <router-link to="/list">
+            <button>列表</button>
+        </router-link>
+
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
 export default {
     data() {
-        return {
-            msg: 'Hello Vue!!!',
-        };
+        return {};
     },
 };
 </script>
