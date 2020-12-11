@@ -1,5 +1,6 @@
 // 基础配置
 const { resolve } = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
@@ -22,6 +23,10 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
+                options: {
+                    presets: ['es2015'],
+                    plugins: ['syntax-dynamic-import'],
+                },
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -42,10 +47,14 @@ module.exports = {
 
     // 插件
     plugins: [
+        // 清除已打包的生产文件
+        new CleanWebpackPlugin(),
+        // html模板
         new HtmlWebpackPlugin({
             template: resolve(__dirname, '../src/index.html'),
             favicon: resolve(__dirname, '../src/statics/icons/favicon.png'),
         }),
+        // vue加载器
         new VueLoaderPlugin(),
     ],
 
