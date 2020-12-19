@@ -3,7 +3,7 @@
         <router-link to="/">
             <button>首页</button>
         </router-link>
-        <router-link to="/list">
+        <router-link to="/list/list">
             <button>列表</button>
         </router-link>
 

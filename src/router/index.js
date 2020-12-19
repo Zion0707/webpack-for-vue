@@ -7,7 +7,7 @@ export default {
             component: resolve => require(['_pages/home/index'], resolve),
         },
         {
-            path: '/list',
+            path: '/list/list',
             name: 'list',
             component: resolve => require(['_pages/list/index'], resolve),
         },

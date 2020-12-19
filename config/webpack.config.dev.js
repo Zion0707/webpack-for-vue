@@ -4,6 +4,11 @@ const { merge } = require('webpack-merge');
 const webpack = require('webpack');
 
 const devConfig = {
+    //  防止二级路由刷新之后出现404情况
+    output: {
+        publicPath: '/',
+    },
+
     // 开启 source-map 模式
     devtool: 'source-map',
 
